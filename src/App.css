@@ -1,0 +1,353 @@
+/* General App Styling */
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #f5a623;
+  --background-color: #f4f7f6;
+  --surface-color: #ffffff;
+  --text-color: #333;
+  --border-color: #e0e0e0;
+  --success-color: #7ed321;
+  --error-color: #d0021b;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Header & Navigation */
+.main-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.main-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.main-header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.main-header nav a:hover, .main-header nav a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Dashboard & Container Styles */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.dashboard-container h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+/* Home Page */
+.home-container .role-selection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.role-card {
+  display: block;
+  padding: 20px;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.role-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.role-card h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+/* Buttons and Forms */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+button:hover {
+  background-color: #357abd;
+}
+button:disabled {
+  background-color: #a0c3e8;
+  cursor: not-allowed;
+}
+button.delete {
+  background-color: var(--error-color);
+}
+button.delete:hover {
+  background-color: #a70115;
+}
+
+.form-container {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  border: 1px solid var(--border-color);
+}
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form-container input {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Manager Menu List */
+.menu-list-manager {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.menu-item-manager {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+.menu-item-manager img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.menu-item-manager .item-details {
+  flex-grow: 1;
+}
+.menu-item-manager h4 { margin: 0; }
+.menu-item-manager p { margin: 5px 0; font-size: 0.9rem; color: #666; }
+.menu-item-manager span { font-weight: bold; color: var(--primary-color); }
+.item-actions { display: flex; gap: 10px; }
+
+
+/* Customer View */
+.customer-view .success-message {
+  background-color: var(--success-color);
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.customer-layout {
+  display: flex;
+  gap: 30px;
+}
+.menu-grid {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+.menu-item-customer {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.menu-item-customer img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.menu-item-customer h4, .menu-item-customer p {
+  margin: 10px 15px 5px;
+}
+.menu-item-customer p {
+  font-size: 0.9rem; color: #666; flex-grow: 1;
+}
+.item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-top: 1px solid var(--border-color);
+}
+.item-footer span { font-weight: bold; font-size: 1.1rem; }
+
+.order-summary {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+.order-summary ul { list-style: none; padding: 0; margin: 0; }
+.order-summary li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+.cart-total {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 2px solid var(--text-color);
+  font-size: 1.2rem;
+  text-align: right;
+}
+.place-order-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 1.2rem;
+  background-color: var(--success-color);
+}
+.place-order-btn:hover { background-color: #68b31a; }
+
+/* Kitchen View (KOS) */
+.kos-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.kos-column {
+  background-color: #eef2f5;
+  padding: 15px;
+  border-radius: 8px;
+}
+.kos-column h3 { text-align: center; margin-top: 0; }
+.order-list { display: flex; flex-direction: column; gap: 15px; }
+.order-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 5px solid var(--secondary-color);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.order-card h4 { margin: 0; }
+.order-card ul { list-style: none; padding-left: 15px; margin: 10px 0;}
+.order-card button { width: 100%; margin-top: 10px; }
+
+/* Waiter Dashboard */
+.table-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+.table-card {
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  color: white;
+}
+.table-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.table-card.available { background-color: var(--success-color); }
+.table-card.occupied { background-color: var(--secondary-color); }
+.table-card.needs-payment { background-color: var(--error-color); }
+
+/* Modal for Waiter view */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    min-width: 400px;
+    max-width: 90%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.total-bill { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); }
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.modal-actions .pay-btn {
+    background-color: var(--success-color);
+}
+.modal-actions .pay-btn:hover {
+    background-color: #68b31a;
+}
+/* --- Styles for Waiter Dashboard Enhancements --- */
+.order-item-waiter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+button.serve-btn {
+  background-color: var(--success-color);
+  padding: 5px 10px;
+  font-size: 0.9rem;
+}
+
+button.serve-btn:hover {
+  background-color: #68b31a;
+}
