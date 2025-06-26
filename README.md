@@ -1,6 +1,6 @@
 # Restaurant Ordering and Management System 🍽️
 
-A web-based system for managing in-person restaurant dining, with features like online ordering from tables, a live kitchen order display, and real-time menu interaction.
+A web-based system for managing in-person restaurant dining, with features like online ordering from tables, a live kitchen order display, and real-time menu interaction, enhancing efficiency and customer experience.
 
 ---
 
